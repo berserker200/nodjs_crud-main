@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+            background-color: #3490f9;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #d3d2d2;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="date"], button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+	
+    <h1>Formulario de Clientes Registrados en Chabot de WhatsApp</h1>
+    <form action="/crud_c" method="post">
+        
+        <input type="date" id="txt_fn" name="txt_fn" placeholder="2024-07-31">
+       
+       <button type="submit" id="btn_actualizar" name="btn_actualizar" value="actializar">Actualizar</button>
+       
+    </form>
+    <table class="table" border="1px">
+        <thead>
+            <tr>
+                <th>iduser</th>
+                <th>descripcion</th>
+                <th>valor</th>
+                <th>creado</th>
+            </tr>
+        </thead>
+        <tbody>
+           <% resultado.forEach((cliente) => { %>
+
+           
+            <tr>
+                <td><%= cliente.iduser %></td>
+                <td><%= cliente.descripcion %></td>
+                <td><%= cliente.valor %></td>
+                <td><%= cliente.creado %></td>
+    
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+</body>
+</html>
+
